@@ -1,0 +1,21 @@
+# Data Manipulation
+pandas
+numpy
+
+# Visualization (EDA)
+matplotlib
+seaborn
+
+# Machine Learning & Preprocessing
+scikit-learn
+xgboost
+lightgbm
+
+# Imbalanced Data
+imbalanced-learn
+
+# Explainability
+shap
+
+# Notebook Support
+ipykernel
