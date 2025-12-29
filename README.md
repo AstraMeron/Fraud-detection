@@ -9,13 +9,14 @@ It focuses on **data understanding, feature preparation, model training, and eva
 ## Task 1 – Data Analysis & Preprocessing
 **Status: Completed**
 
-- Dataset: `Fraud_Data.csv`
-- Target variable: `class` (1 = fraud, 0 = non-fraud)
-- Data cleaning and preprocessing
-- Exploratory Data Analysis (EDA) to understand:
+- Datasets:
+  - `Fraud_Data.csv` → target: `class`
+  - `creditcard.csv` → target: `Class`
+- Data cleaning and preprocessing for both datasets
+- Exploratory Data Analysis (EDA) for each dataset:
   - Fraud vs non-fraud behavior
   - Feature distributions and relationships
-  - Class imbalance impact
+  - Class imbalance analysis
 - Prepared modeling-ready features and validated dataset quality
 
 ---
@@ -24,7 +25,7 @@ It focuses on **data understanding, feature preparation, model training, and eva
 **Status: Completed**
 
 ### Data Preparation
-- Stratified train–test split to preserve class distribution
+- Stratified train–test split to preserve class distribution for both datasets
 - Features separated from target variable
 - Class imbalance handled correctly during training
 
@@ -41,10 +42,14 @@ It focuses on **data understanding, feature preparation, model training, and eva
 - AUC-PR (Primary metric due to class imbalance)
 
 ### Cross-Validation
-- Stratified 5-Fold Cross-Validation
+- Stratified 5-Fold Cross-Validation for both datasets
 - Stable performance across folds
-- Mean AUC-PR ≈ **0.98**
-- Mean F1-Score ≈ **0.97**
+- Fraud_Data.csv:
+  - Mean AUC-PR ≈ **0.98**
+  - Mean F1-Score ≈ **0.97**
+- creditcard.csv:
+  - Mean AUC-PR ≈ **0.79**
+  - Mean F1-Score ≈ **0.90**
 
 ### Model Selection
 XGBoost was selected due to:
@@ -60,6 +65,7 @@ XGBoost was selected due to:
 - Task 3: ⏳ Pending (Model Explainability with SHAP)
 
 ---
+
 ## 3. How to Run
 
 1. **Clone the Repository:**
@@ -107,7 +113,13 @@ XGBoost was selected due to:
     notebooks/eda-creditcard.ipynb
     notebooks/feature-engineering.ipynb
     notebooks/modeling.ipynb
-    
     ```
 
+---
 
+## Notes
+- Processed datasets are saved in `data/processed/`:
+  - `fraud_data_final.csv`
+  - `creditcard_processed.csv`
+- Saved model artifacts are in `models/`
+- Task 3 (SHAP Explainability) will extend analysis to feature importance and actionable business insights
